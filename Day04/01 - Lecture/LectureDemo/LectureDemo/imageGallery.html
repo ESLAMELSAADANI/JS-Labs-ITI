@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   
+</head>
+<body>
+    <img src="Images/1.png" width="200" height="200" border="3" />
+    <br /><br />
+    <input type="button" value="◀️"  id="prev"/>
+
+    <input type="button" value="▶️" id="next" />
+
+    <script>
+        imgobj = document.querySelector("img")
+        next = document.querySelector("#next")
+        prev = document.querySelector("#prev")
+        var counter = 1;
+        next.addEventListener('click', function () {
+            counter++;
+            if (counter == 7)
+            counter=1
+            imgobj.src="images/"+counter+".png"
+
+        })// next
+
+        prev.addEventListener('click', function () {
+            counter--;
+            if (counter == 0)
+                counter = 6
+            imgobj.src = "images/" + counter + ".png"
+
+        })// prev
+
+
+
+
+
+    </script>
+
+</body>
+</html>

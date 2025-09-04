@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <script>
+       // functions statment declaration 
+       //function funname() {
+
+       //    // function body
+
+       //}// function declaration
+
+       //funname(); // function call
+
+       //function fun1() {
+       //    console.log("Welcome from function")
+       //}
+       //fun1()
+
+       function greeting(_name) {
+           console.log(`Hi ${_name}`)
+       }
+       //greeting("ali")
+
+       // greeting()
+
+       function sum(a,b) {
+           console.log(`sum = ${a+b}`)
+       }
+
+       // sum(2,4)
+      // sum(2) // NaN  2+undefined
+      // sum(2, 5, 7)
+
+       //function getdouble(num) {
+       //    return num * 2;
+       //}
+
+       //result = getdouble(5)
+
+       //  optional params
+       //function sum(a, b) {
+       //    if (a == undefined || b == undefined) {
+       //        console.log(`Error`)
+
+       //    }
+       //    else {
+       //        console.log(`sum = ${a + b}`)
+       //    }
+       //}
+
+       //sum(5)
+
+       // Default Params function 
+       function sum(a=0, b=0) {
+          
+               console.log(`sum = ${a + b}`)
+         
+       }
+
+       //sum()
+       //sum(5)
+       //sum(5, 5)
+       //sum(5, 5, 6)
+
+       // Arguments
+       var sum = 0;
+       function sumAll() {
+           //console.log(arguments)
+           for (var i = 0; i < arguments.length; i++) {
+               sum += arguments[i]
+           }
+           console.log(`sum = ${sum}`)
+       }
+
+       // sumAll(10,20,"ali",null, true,12,20)
+       sumAll(100, 200)
+
+
+
+
+       // function Expression 
+
+    
+
+       result = function (num) {
+           return num * 2;
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </script>
+</head>
+<body>
+
+</body>
+</html>

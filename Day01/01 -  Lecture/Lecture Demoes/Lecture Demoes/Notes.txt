@@ -1,0 +1,90 @@
+﻿Static Web Page 
+-JS 
+-Client Side >> Client 
+
+EcMA 
+
+ES5
+
+ES6
+
+ES7
+
+ESNext 
+
+- CrossPlatform 
+- Case Sensetive Language 
+  x != X
+  b!=B
+  online!= Online!=onlIne
+   ; end of line 
+   // comment for single line 
+   /*
+   comment for multi line 
+
+   */
+
+   ===================================
+   reserved key words
+   function while if for 
+   ==============================
+   Embeding Language == not standalone Lang 
+   Interpreter 
+
+   ==========================
+
+   losely type Language 
+   var x="ali"
+   x=10;
+   x=2.2
+   x=true
+   // Validation 
+   ================================
+   var name="ali"
+
+   if
+   var _if
+   f;
+   if_success
+   if4
+   $if
+   
+   ========================================
+   where to write JS 
+   1- External Script <script>
+   2- internal Script // html page
+   3- Event Handeler 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+

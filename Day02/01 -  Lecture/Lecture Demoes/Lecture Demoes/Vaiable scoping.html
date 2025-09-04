@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <script>
+       console.log(x)// undefined
+       var x = 10 // global variable 
+       function print() {
+           //var x 
+           console.log(x)//hoisting undefined  
+
+
+           var x = 30;// local variable
+           console.log(x)//hoisting undefined  
+
+            _name="ali" // global 
+       }
+
+       print()//30
+       //console.log(x)
+       //console.log(_name)
+
+
+   </script>
+</head>
+<body>
+
+</body>
+</html>

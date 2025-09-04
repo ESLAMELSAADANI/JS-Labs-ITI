@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <script>
+       //var str = ''//"" empty string 
+       //console.log(typeof str)
+       //str = "";// literal Declaration 
+       //str = "22"
+       //str = "true"
+       //str = "null"
+       //str = "A"// string 
+       //_name="aly"
+       //console.log("welcome to iti" + "mamnsoura Branch")
+       //console.log("i\"ll be ok ")
+       //console.log('i\'ll be ok ')
+       //console.log("i'll be ok ")
+       //console.log('i\nll be ok ')
+       //console.log('i\tll be ok ')
+       //console.log("welcome to iti\
+       //mamnsoura Branch")
+
+       //// strinh interpolation 
+       //console.log("welcome " + _name)
+       //console.log(`welcome ${_name}`)// ES6
+
+       ///  String object 
+       var str = new String("Welcome to js")
+       typeof str // object
+       str.constructor.name
+       str.valueOf()//"Welcome to js"
+       str.length
+       str[0]
+       typeof str[0]
+       str.charAt(11)
+       str.substring(1, 3)//el 
+       str.substring(3)//'come to js'
+
+       str.slice(1, 3)//el 
+       str.slice(3)//'come to js'
+       str.slice(-2)// js
+       str.indexOf("e")
+       str.lastIndexOf("e")
+       str.lastIndexOf("z")//-1 not included
+
+       // to UpperCase(), toLowerCase()
+       str.replace("W", "x")//
+
+       str.split().constructor.name// Array
+       arr = str.split(' ')
+       str.split(' ')[0][0]//'W'
+
+       ///
+
+       var mystr = new String("ItI MaNsoura BraNch")
+       console.log(`Before : ${mystr.valueOf()}`)
+       var newstr=""
+       for (var i = 0; i < mystr.length; i++) {
+           if (mystr[i] == mystr[i].toUpperCase()) {
+              newstr+= mystr[i].toLowerCase()
+           }
+           else {
+               newstr +=  mystr[i].toUpperCase()
+
+           }
+
+       }
+       console.log(`After : ${newstr}`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </script>
+</head>
+<body>
+
+</body>
+</html>

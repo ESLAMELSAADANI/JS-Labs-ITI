@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form method="get" action="Events.html">
+        <input type="text" placeholder="Enter User Name" name="usr" /><br />
+        <input type="password" placeholder="Enter User pass" name="pass" /><br />
+        <input type="submit"  value="Log In" /><br />
+
+
+    </form>
+    <script>
+        btn = document.querySelector("input[type='submit']")
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            alert("deafault Event Prevented")
+        })
+    </script>
+</body>
+</html>

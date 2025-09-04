@@ -1,0 +1,15 @@
+﻿JS 
+losely type 
+var 
+primitive type 
+object types 
+
+Number 
+Wraaping 
+
+========================
+String 
+
+
+
+

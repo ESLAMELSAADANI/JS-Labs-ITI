@@ -1,0 +1,14 @@
+﻿Events
+action >> running code
+Event Handeling 
+fire Event >> run JS Function
+
+
+EventHandeler 
+
+
+onclick ==>> "on"+click(event)
+click  
+
+
+
