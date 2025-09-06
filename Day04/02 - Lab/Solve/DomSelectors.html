@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Css Lecture Demoes</title>
+
+    <style>
+        .bPink {
+            background-color: pink;
+        }
+
+        .bGrey {
+            background-color: lightgray;
+        }
+
+        .fontLarge {
+            font-size: large;
+        }
+
+        .fontGreen {
+            color: green;
+        }
+
+        .fontBlue {
+            color: Blue;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .even {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .odd {
+            color: green;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Selectors </h1>
+    <p> Selectors are used to fetch page elements inside an Array </p>
+
+    <ul id="list1">
+        <li class="a"><code><i>tag</i></code>: Select all of the &lt;tag&gt; elements</li>
+        <li class="a"><code><i>.className</i></code>: Select all elements that have the <i>className</i> class applied
+        </li>
+        <li class="b"><code>#identifier</code>: Select the element with the id of <i>identifier</i></li>
+        <li class="b"><code><i>tag.className</i></code>: Select all &lt;tag&gt; elements that have the <i>className</i>
+            class applied</li>
+    </ul>
+
+    <h1>Css Hierarchy Selectors</h1>
+    <p>To select elements based on their position in the document tree, use the Hierarchy Selectors.</p>
+    <p>The Hierarchy Selectors work by examining the position of target elements relative to other elements:</p>
+    <ol id="list2">
+        <li><code>parent > child</code>: selects "child" elements that are immediate descendants of the "parent"</li>
+        <li><code>ancestor descendant</code>: selects "descendant" elements as long as they have an "ancestor" element
+            somewhere above them</li>
+        <li><code>prev + next</code>: selects the "next" element if it is immediately preceded by a "prev" element</li>
+        <li><code>prev ~ siblings</code>: selects all "siblings" elements that come after a "prev" element</li>
+    </ol>
+    <div id="example" name="exampleDiv">
+        <a>
+            <p class="a">This is paragraph 1 </p>
+        </a>
+        <p id="para2">This is paragraph 2 </p>
+        <p class="bGrey fontBlue">This is paragraph 3 <span> this is span 1</span> </p>
+        <span>
+            <p id="para4">This is paragraph 4 </p>
+        </span>
+    </div>
+
+    <img src="1.jpg" name="firstImage" />
+    <img src="10.jpg" id="secondImg" />
+
+    <h3> HTML Table 1</h3>
+    <table class="bGrey">
+        <tr>
+            <td>Cell 1 </td>
+            <td> Cell 2</td>
+        </tr>
+        <tr>
+            <td>Cell 3 </td>
+            <td> Cell 4</td>
+        </tr>
+        <tr>
+            <td>Cell 5 </td>
+            <td> Cell 6</td>
+        </tr>
+    </table>
+    <h3> HTML Table 2</h3>
+    <table class="bPink">
+        <tr>
+            <td><a href="http://www.iti.gov.eg"> ITI </a> </td>
+            <td> Cell 2</td>
+        </tr>
+        <tr>
+            <td><a href="http://www.google.com" id="googleAnchor"> google </a> </td>
+            <td> Cell 4</td>
+        </tr>
+        <tr>
+            <td><a href="next.html"> MyPage </a> </td>
+            <td> Cell 6</td>
+        </tr>
+    </table>
+
+    <h3> HTML Form </h3>
+    <form name="basicForm" class="bGrey fontBlue">
+        <fieldset>
+
+            <legend> Filters Form </legend>
+
+            <input type="text" value="Type your name here" />
+            <br />
+            <input type="text" value="Type your age" />
+            <br />
+            <input type="button" value="send" />
+        </fieldset>
+    </form>
+    <form id="UserData" name="regForm" action="Data.aspx">
+        <input type="checkbox" name="hoppy" value="Running" checked />Running
+        <input type="checkbox" name="hoppy" value="Swimming" />Swimming
+        <input type="checkbox" name="hoppy" value="Reading" />Reading<br />
+        <select name="City" class="bPink">
+            <option value="1">Mansoura</option>
+            <option value="2">Cairo</option>
+            <option value="3">Alex</option>
+        </select>
+        <input type="submit" value="Send" />
+    </form>
+
+    <br />
+    <br />
+    <br />
+    <img id="slideImg" src="1.jpg" width="200" height="200">
+    <br>
+    <button onclick="nextImg()">Next</button>
+    <button onclick="prevImg()">Previous</button>
+    <button onclick="startSlide()">Slide Show</button>
+    <button onclick="stopSlide()">Stop</button>
+
+    <br>
+    <br>
+    <br>
+
+    <label for="studentDropdown">Select Student Name:</label>
+    <select id="studentDropdown">
+        <option value="">-- Select Name --</option>
+    </select>
+
+    <div id="studentInfo"></div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="arrayOutput"></div>
+
+    <script>
+
+        //Part01
+        // a) Find all images in page (two ways)
+        var imgs01 = document.images;
+        var imgs02 = document.getElementsByTagName("img");
+
+        // b) Find all options for City drop down list
+        var cityOptions = document.getElementsByName("City")[0].options;
+
+        // c) Find all rows for second table in page
+        var tables = document.getElementsByTagName("table");
+        var secondTableRows = tables[1].rows;
+
+        // d) Find all elements that contain class name fontBlue
+        var fontBlueElements = document.getElementsByClassName("fontBlue");
+
+
+        //==================================================
+
+        //Part02
+        // a) Get first anchor inside the second table and change href to "Training.com" +and text to "Training"
+        var firstAnchor = tables[1].getElementsByTagName("a")[0];
+        firstAnchor.href = "http://training.com";
+        firstAnchor.textContent = "Training";
+
+        // b) Find last image and change its border
+        var lastImg = document.images[document.images.length - 1];
+        lastImg.style.border = "2px solid pink";
+
+        // c) Function to find all checked checkboxes in userData form
+        function showCheckedValues() {
+            form = document.forms["regForm"];
+            checkboxes = form.querySelectorAll("input[type=checkbox]:checked");
+            checkboxes.forEach(cb => alert(cb.value));
+        }
+
+        // d) Find element with id="example" and change background to pink
+        document.getElementById("example").style.backgroundColor = "pink";
+
+
+        //===============================================================
+
+        //Part03 - Slides Images
+        var images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"];
+        var index = 0;
+        var interval;
+
+        function showImage() {
+            document.getElementById("slideImg").src = images[index];
+        }
+
+        function nextImg() {
+            index = (index + 1) % images.length;
+            showImage();
+        }
+
+        function prevImg() {
+            index = (index - 1 + images.length) % images.length;
+            showImage();
+        }
+
+        function startSlide() {
+            interval = setInterval(nextImg, 1000);
+        }
+
+        function stopSlide() {
+            clearInterval(interval);
+        }
+
+        //=====================================
+
+        //Part04
+        var students = [
+            { name: "Ali", age: 20, Crs: "CS" },
+            { name: "Sara", age: 22, Crs: "Math" },
+            { name: "Omar", age: 19, Crs: "Physics" },
+            { name: "Laila", age: 16, Crs: "CS" },
+            { name: "khaled", age: 23, Crs: "Engineering" },
+            { name: "Mona", age: 20, Crs: "Biology" },
+            { name: "Kareem", age: 24, Crs: "Math" },
+            { name: "Noor", age: 18, Crs: "CS" }
+        ];
+
+        var dropdown = document.getElementById("studentDropdown");
+        students.forEach(stu => {
+            option = document.createElement("option");
+            option.value = stu.name;
+            option.textContent = stu.name;
+            dropdown.appendChild(option);
+        });
+
+        dropdown.addEventListener("change", function () {
+            student = students.find(s => s.name == this.value);
+            document.getElementById("studentInfo").innerHTML = `
+    <p>Name: ${student.name}</p>
+    <p>Age: ${student.age}</p>
+    <p>Crs: ${student.Crs}</p>
+  `;
+        });
+
+        //=======================================
+
+        //Part05 - write js code to print data from array as even indexes will be printed with style different than odd ones
+        var fruits = ["Apple", "Banana", "Cherry", "Mango", "Orange", "Grapes"];
+        var output = document.getElementById("arrayOutput");
+
+        fruits.forEach((item, i) => {
+            p = document.createElement("p");
+            p.textContent = item;
+            p.style.color = (i % 2 === 0) ? "blue" : "green";
+            output.appendChild(p);
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>
