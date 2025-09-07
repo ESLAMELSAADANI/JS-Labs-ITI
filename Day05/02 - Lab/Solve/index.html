@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js | Day05 Lab</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <table id="StudentsTable">
+        <caption>
+            <h2>Students Table</h2>
+        </caption>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Track</th>
+                <th>Courses</th>
+                <th>Position</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+    <br>
+
+    <div id="todo-container">
+        <h2>My To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button id="addBtn">Add</button>
+
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        //Part01 - FetchTheAPI->  StudentTable
+        var xhr = new XMLHttpRequest();
+        var url = "https://api.jsonbin.io/v3/b/68bc79dbae596e708fe4e8c6";
+
+        xhr.open("GET", url, true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var data = JSON.parse(xhr.responseText);
+                var records = data.record;
+
+                var tableBody = document.querySelector("#StudentsTable tbody");
+                tableBody.innerHTML = "";
+
+                for (var i = 0; i < records.length; i++) {
+                    var item = records[i];
+                    var row = document.createElement("tr");
+
+                    row.innerHTML =
+                        "<td><img src='" + item.image + "' alt='Profile'></td>" +
+                        "<td>" + item.firstName + "</td>" +
+                        "<td>" + item.lastName + "</td>" +
+                        "<td>" + item.phone + "</td>" +
+                        "<td>" + item.address + "</td>" +
+                        "<td>" + item.track + "</td>" +
+                        "<td>" + item.courses.join("<br>") + "</td>" +
+                        "<td>" + item.position + "</td>";
+
+                    tableBody.appendChild(row);
+                }
+            }
+        };
+
+        xhr.send();
+
+        //Part02 - To-Do List
+        var addBtn = document.getElementById("addBtn");
+        var taskInput = document.getElementById("taskInput");
+        var taskList = document.getElementById("taskList");
+
+        addBtn.onclick = function () {
+            var taskText = taskInput.value.trim();
+
+            if (taskText === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            var li = document.createElement("li");
+            li.textContent = taskText;
+
+            var deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.className = "delete-btn";
+
+            deleteBtn.onclick = function () {
+                var confirmDelete = confirm("Are you sure you want to delete this task?");
+                if (confirmDelete) {
+                    taskList.removeChild(li);
+                }
+            };
+
+            li.appendChild(deleteBtn);
+            taskList.appendChild(li);
+
+            taskInput.value = "";
+        };
+    </script>
+
+</body>
+
+</html>
