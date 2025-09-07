@@ -138,12 +138,12 @@
     <br />
     <br />
     <br />
-    <img id="slideImg" src="1.jpg" width="200" height="200">
+    <img id="imgSlides" src="1.jpg" width="200" height="200">
     <br>
-    <button onclick="nextImg()">Next</button>
-    <button onclick="prevImg()">Previous</button>
-    <button onclick="startSlide()">Slide Show</button>
-    <button onclick="stopSlide()">Stop</button>
+    <button id="next">Next</button>
+    <button id="previous">Previous</button>
+    <button id="slideShow">Slide Show</button>
+    <button id="stopp">Stop</button>
 
     <br>
     <br>
@@ -171,7 +171,7 @@
         var imgs02 = document.getElementsByTagName("img");
 
         // b) Find all options for City drop down list
-        var cityOptions = document.getElementsByName("City")[0].options;
+        var cityOptions = document.getElementsByName("City")[0];
 
         // c) Find all rows for second table in page
         var tables = document.getElementsByTagName("table");
@@ -207,31 +207,44 @@
         //===============================================================
 
         //Part03 - Slides Images
-        var images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"];
-        var index = 0;
+
+        imgobj = document.querySelector("#imgSlides")
+        next = document.querySelector("#next")
+        prev = document.querySelector("#previous")
+        slideShow = document.querySelector("#slideShow")
+        stopp = document.querySelector("#stopp")
+        var counter = 1;
         var interval;
 
-        function showImage() {
-            document.getElementById("slideImg").src = images[index];
-        }
+        next.addEventListener('click', function () {
+            counter++;
+            if (counter == 7)
+                counter = 1
+            imgobj.src = counter + ".jpg"
 
-        function nextImg() {
-            index = (index + 1) % images.length;
-            showImage();
-        }
+        })
 
-        function prevImg() {
-            index = (index - 1 + images.length) % images.length;
-            showImage();
-        }
+        prev.addEventListener('click', function () {
+            counter--;
+            if (counter == 0)
+                counter = 6
+            imgobj.src = counter + ".jpg"
 
-        function startSlide() {
-            interval = setInterval(nextImg, 1000);
-        }
+        })
 
-        function stopSlide() {
-            clearInterval(interval);
-        }
+        slideShow.addEventListener('click', function () {
+            interval = setInterval(function () {
+                counter++;
+                if (counter == 7)
+                    counter = 1
+                imgobj.src = counter + ".jpg"
+
+            }, 1000)
+        })
+
+        stopp.addEventListener('click', function () {
+            clearInterval(interval)
+        })
 
         //=====================================
 
